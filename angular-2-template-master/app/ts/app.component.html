@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Book List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Author</td>
+                <td>Publish</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="#b of booksChecked" title="Click to Edit" onclick="" (click)="onClickRemoveBook(b)">
+                <td>{{b.author}}</td>
+                <td>{{b.publish}}</td>
+                <td>{{b.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form id="edit-form">
+        <div class="form-field">
+            <label>Author:</label>
+            <input #Author placeholder="Author" />
+        </div>
+        <div class="form-field">
+            <label>Publish:</label>
+            <input #Publish placeholder="Publish" />
+        </div>
+        
+        <div class="form-field">
+            <label>Title:</label>
+            <input #Title placeholder="Title" />
+        </div>
+        <button (click)="onClickEditNewBook(Author.value,Publish.value,Title.value)">Edit Book</button>
+    </form>
+</body>
+</html>
