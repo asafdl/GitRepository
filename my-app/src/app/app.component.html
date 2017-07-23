@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Book List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Author</td>
+                <td>Publish</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of booksChecked" title="Click to Edit" (click)="onClickEditBook(b)">
+                <td>{{b.author}}</td>
+                <td>{{b.publish}}</td>
+                <td>{{b.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <popup #popupEdit (confirmClick)="onConfirmEditBook(Author.value,Publish.value,Title.value)" (cancelClick)="onCancelEditBook()">
+            <div>
+                <label >Author:  </label>
+                <input class="form-control" #Author placeholder="Author" />
+            </div>
+            <div>
+                <label>Publish: </label>
+                <input class="form-control" #Publish placeholder="Publish" />
+            </div>
+
+            <div>
+                <label>Title:   </label>
+                <input class="form-control" id="title" #Title placeholder="Title" />
+            </div> 
+        
+    </popup>
+    <button (click)="onClickAddBook()">Add Book</button>
+    <popup #popupAdd (confirmClick)="onConfirmAddBook(Author.value,Publish.value,Title.value)" (cancelClick)="onCancelAddBook()">
+        <div>
+            <label>Author:  </label>
+            <input class="form-control" #Author placeholder="Author" />
+        </div>
+        <div>
+            <label>Publish: </label>
+            <input class="form-control" #Publish placeholder="Publish" />
+        </div>
+
+        <div>
+            <label>Title:   </label>
+            <input class="form-control" id="title" #Title placeholder="Title" />
+        </div> 
+    </popup>
+    
+</body>
+</html>

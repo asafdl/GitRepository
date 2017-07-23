@@ -1,4 +1,4 @@
-export class Book {
+﻿export class Book {
     author: string;
     publish: Date;
     title: string;
@@ -7,6 +7,7 @@ export class Book {
         this.author = _author;
         this.publish = _publish;
         this.title = this.cleanTitle(_title);
+        
     }
 
 
@@ -72,7 +73,7 @@ export class Book {
 
 
     public cleanTitle(title: string) {
-        
+
         var i;
         var c;
         var txt = "";
@@ -94,8 +95,7 @@ export class Book {
             else if (typeOfChar == 3) {
                 txt = txt + c;
             }
-            else
-            {
+            else {
                 //unwanted case
             }
 
