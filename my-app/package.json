@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build.prod": "ng build --aot --prod --progress false --base-href \"https://asafdl.github.io/my-app/ \""
   },
   "private": true,
   "dependencies": {
@@ -47,4 +48,5 @@
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
   }
+
 }
